@@ -1,5 +1,18 @@
 // https://p5js.org/reference/
 
+let arr = []
+
+for (let i = 0; i < 8; i++) {
+    arr.push([])
+}
+for (let o = 0; o < arr.length; o++) {
+    for (let j = 0; j < arr.length; j++) {
+        arr[j].push([])
+    }
+}
+console.log(arr);
+
+
 var screen = 600
 var fps = 60
 var x = 20
@@ -15,13 +28,7 @@ function draw() {
     background(80,80,80);
     fill(255,0,0)
     rect(x,y,20,20)
-    if (x >= screen && y >= screen){
-        x--
-        y--
-    }
-    else if (x <= screen && y <= screen) {
-        x++
-        y++
-        
+    for (let i = 0; i < arr.length; i++) {  
+        line(0,0,screen,screen)
     }
 }
